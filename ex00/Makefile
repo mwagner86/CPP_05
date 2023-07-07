@@ -21,7 +21,7 @@ NAME 		:= main
 CC 			:= c++
 CFLAGS 		:= -Wall -Werror -Wextra -std=c++98
 SRC 		:=	main.cpp \
-				TemplateClass.cpp
+				Bureaucrat.cpp
 
 all: $(NAME)
 

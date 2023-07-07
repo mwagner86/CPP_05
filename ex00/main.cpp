@@ -1,5 +1,5 @@
 #include <iostream>
-#include "TemplateClass.hpp"
+#include "Bureaucrat.hpp"
 
 int main() {
 
