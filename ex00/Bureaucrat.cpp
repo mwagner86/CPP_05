@@ -39,7 +39,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
     return *this;
 }
 
-Bureaucrat::~Bureaucrat() {
+Bureaucrat::~Bureaucrat(void) {
     if (VERBOSE) {
         std::cout << COLOR_GREEN << "[Bureaucrat] " << COLOR_DEFAULT
                   << "Destructor called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
@@ -47,16 +47,16 @@ Bureaucrat::~Bureaucrat() {
     }
 }
 
-int Bureaucrat::getGrade() const {
+int Bureaucrat::getGrade(void) const {
     return this->_grade;
 }
 
-std::string const & Bureaucrat::getName() const {
+std::string const & Bureaucrat::getName(void) const {
     return this->_name;
 }
 
 // CAVE: increment grade == "--"
-void	Bureaucrat::incrementGrade() {
+void	Bureaucrat::incrementGrade(void) {
     if (VERBOSE) {
         std::cout << COLOR_GREEN << "[Bureaucrat] " << COLOR_ORANGE
                   << "incrementGrade() function called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
@@ -68,7 +68,7 @@ void	Bureaucrat::incrementGrade() {
 }
 
 // CAVE: decrement grade == "++"
-void	Bureaucrat::decrementGrade() {
+void	Bureaucrat::decrementGrade(void) {
     if (VERBOSE) {
         std::cout << COLOR_GREEN << "[Bureaucrat] " << COLOR_BLUE
                   << "decrementGrade() function called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
