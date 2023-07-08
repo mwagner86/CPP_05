@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 17:27:05 by mwagner           #+#    #+#             */
-/*   Updated: 2023/07/08 17:27:08 by mwagner          ###   ########.fr       */
+/*   Created: 2023/07/08 17:27:51 by mwagner           #+#    #+#             */
+/*   Updated: 2023/07/08 17:27:54 by mwagner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_COLORS_H
-# define EX00_COLORS_H
+#ifndef EX01_COLORS_H
+# define EX01_COLORS_H
 
 #define COLOR_DEFAULT "\033[0m"
 #define COLOR_RED "\033[31m"
@@ -24,4 +24,4 @@
 #define COLOR_PURPLE "\033[38;5;105m"
 #define COLOR_ORANGE "\033[38;5;208m"
 
-#endif // EX00_COLORS_H
+#endif // EX01_COLORS_H

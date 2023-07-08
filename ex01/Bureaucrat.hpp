@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 17:26:58 by mwagner           #+#    #+#             */
-/*   Updated: 2023/07/08 17:27:00 by mwagner          ###   ########.fr       */
+/*   Created: 2023/07/08 17:27:40 by mwagner           #+#    #+#             */
+/*   Updated: 2023/07/08 17:27:42 by mwagner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_BUREAUCRAT_HPP
-#define EX00_BUREAUCRAT_HPP
+#ifndef EX01_BUREAUCRAT_HPP
+#define EX01_BUREAUCRAT_HPP
 
 #include <iostream>
 #include "colors.hpp"
@@ -60,4 +60,4 @@ std::ostream &		operator<<( std::ostream & o, Bureaucrat const * i );
 # ifndef VERBOSE
 #  define VERBOSE 0
 # endif
-#endif //EX00_BUREAUCRAT_HPP
+#endif //EX01_BUREAUCRAT_HPP
