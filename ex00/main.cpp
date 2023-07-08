@@ -4,7 +4,9 @@
 int main() {
     // Constructors and insertion operator:
     // Default
-    std::cout << "Constructor tests: " << std::endl;
+    std::cout   << "\n**************************************\n"
+                << "CONSTRUCTOR TESTS\n"
+                << "**************************************\n\n";
     Bureaucrat b1("Olaf", 100);
     std::cout << b1 << std::endl;
     // Copy
@@ -14,17 +16,26 @@ int main() {
     Bureaucrat b3 = b2;
     std::cout << b3 << std::endl;
 
+    std::cout   << "\n**************************************\n"
+                << "GRADE SET TOO HIGH\n"
+                << "**************************************\n\n";
     try {
         Bureaucrat Anna("Anna Lena", 0); // Throws GradeTooHighException
     } catch (std::exception &e) {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
+    std::cout   << "\n**************************************\n"
+                << "GRADE SET TOO LOW\n"
+                << "**************************************\n\n";
     try {
         Bureaucrat Robert("Robert", 200); // Throws GradeTooLowException
     } catch (std::exception &e) {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
 
+    std::cout   << "\n**************************************\n"
+                << "TEST GRADE INCREMENT / DECREMENT\n"
+                << "**************************************\n\n";
     try {
         Bureaucrat b("John Doe", 50);
         std::cout << b << std::endl;
@@ -41,6 +52,9 @@ int main() {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
 
+    std::cout   << "\n**************************************\n"
+                << "TEST LEAVING GRADE RANGE\n"
+                << "**************************************\n\n";
     try {
         Bureaucrat b4("Jane Doe", 1);
         std::cout << b4 << std::endl;
