@@ -2,20 +2,66 @@
 #include "Bureaucrat.hpp"
 
 int main() {
+    // Constructors and insertion operator:
+    // Default
+    std::cout << "Constructor tests: " << std::endl;
+    Bureaucrat b1("Olaf", 100);
+    std::cout << b1 << std::endl;
+    // Copy
+    Bureaucrat b2(b1);
+    std::cout << b2 << std::endl;
+    // Assignment
+    Bureaucrat b3 = b2;
+    std::cout << b3 << std::endl;
 
-	Template obj(42); // Create an instance of the Template class with _foo = 42
-	std::cout << obj << std::endl; // Print the object using the overloaded operator<<
+    try {
+        Bureaucrat Anna("Anna Lena", 0); // Throws GradeTooHighException
+    } catch (std::exception &e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
+    try {
+        Bureaucrat Robert("Robert", 200); // Throws GradeTooLowException
+    } catch (std::exception &e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
 
-/*	Template	instance1;
-	Template	instance2 ( 42);
-	Template	instance3 ( instance1 );
+    try {
+        Bureaucrat b("John Doe", 50);
+        std::cout << b << std::endl;
 
-	std::cout << instance1 << std::endl;
-	std::cout << instance2 << std::endl;
-	std::cout << instance3 << std::endl;
+        // Increment grade
+        b.incrementGrade(); // Should throw GradeTooHighException if Grade goes out of Range
+        std::cout << b << std::endl;
 
-	instance3 = instance2;
-	std::cout << instance3 << std::endl;*/
+        // Decrement grade
+        b.decrementGrade(); // Should throw GradeTooLowException if Grade goes out of Range
+        std::cout << b << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
 
-	return 0;
+    try {
+        Bureaucrat b4("Jane Doe", 1);
+        std::cout << b4 << std::endl;
+
+        // Increment grade
+        b4.incrementGrade(); // Should throw GradeTooHighException if Grade goes out of Range
+        std::cout << b4 << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
+
+    try {
+        Bureaucrat b5("Donald", 150);
+        std::cout << b5 << std::endl;
+
+        // Decrement Grade
+        b5.decrementGrade(); // Should throw GradeTooHighException if Grade goes out of Range
+        std::cout << b5 << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
 }

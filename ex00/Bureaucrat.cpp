@@ -4,49 +4,81 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
-    std::cout << "Default Constructor called" << std::endl;
-    this->_foo = 0;
-}
-Bureaucrat::Bureaucrat(int n) {
-    std::cout << "Parametric Constructor called" << std::endl;
-    this->_foo = n;
+Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name) {
+    if (VERBOSE)
+        std::cout   << COLOR_GREEN << "[Bureaucrat] " << COLOR_DEFAULT
+                    << "Default Constructor called " << COLOR_YELLOW << name << COLOR_DEFAULT
+                    << " " << COLOR_CYAN << grade  << COLOR_DEFAULT << std::endl;
+    if (grade > MINGRADE) {
+        throw GradeTooLowException();
+    }
+    if (grade < MAXGRADE) {
+        throw GradeTooHighException();
+    }
+    this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src) : _foo() {
-    std::cout << "Copy constructor called" << std::endl;
+Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name + "_copy") {
+    if (VERBOSE)
+        std::cout   << COLOR_GREEN << "[Bureaucrat] " << COLOR_DEFAULT
+                    << "Copy Constructor called " << COLOR_YELLOW << src.getName() << COLOR_DEFAULT
+                    << " " << COLOR_CYAN << src.getGrade()  << COLOR_DEFAULT << std::endl;
     *this = src;
 }
 
-Bureaucrat::~Bureaucrat() {
-    std::cout << "Destructor called" << std::endl;
-}
-
-void	Bureaucrat::setFoo(int n) {
-    this->_foo = n;
-}
-
-int			Bureaucrat::getFoo() const {
-    return this->_foo;
-}
-
-void	Bureaucrat::setName(std::string name) {
-    this->_name = name;
-}
-
-std::string const & Bureaucrat::getName() const {
-    return (this->_name);
-}
-
-
-Bureaucrat &	Bureaucrat::operator=(Bureaucrat const &rhs) {
-    std::cout << "Assignment operator overload called" << std::endl;
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
+    if (VERBOSE)
+        std::cout   << COLOR_GREEN << "[Bureaucrat] " << COLOR_DEFAULT
+                    << "Assignment Constructor called " << COLOR_YELLOW << rhs.getName() << COLOR_DEFAULT
+                    << " " << COLOR_CYAN << rhs.getGrade()  << COLOR_DEFAULT << std::endl;
     if ( this != &rhs )
-        this->_foo = rhs.getFoo();
+        this->_grade = rhs.getGrade();
     return *this;
 }
 
+Bureaucrat::~Bureaucrat() {
+    if (VERBOSE)
+    std::cout   << COLOR_GREEN << "[Bureaucrat] " << COLOR_DEFAULT
+                << "Destructor called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
+                << " " << COLOR_CYAN << this->getGrade()  << COLOR_DEFAULT << std::endl;
+}
+
+int Bureaucrat::getGrade() const {
+    return this->_grade;
+}
+
+std::string const & Bureaucrat::getName() const {
+    return this->_name;
+}
+
+// CAVE: increment grade == "--"
+void	Bureaucrat::incrementGrade() {
+    if (VERBOSE)
+        std::cout   << COLOR_GREEN << "[Bureaucrat] " << COLOR_ORANGE
+                    << "incrementGrade() function called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
+                    << " " << COLOR_CYAN << this->getGrade() << COLOR_DEFAULT << std::endl;
+    if (this->_grade == Bureaucrat::MAXGRADE)
+        throw GradeTooHighException();
+    this->_grade--;
+}
+
+// CAVE: decrement grade == "++"
+void	Bureaucrat::decrementGrade() {
+    if (VERBOSE)
+        std::cout   << COLOR_GREEN << "[Bureaucrat] " << COLOR_BLUE
+                    << "decrementGrade() function called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
+                    << " " << COLOR_MAGENTA << this->getGrade() << COLOR_DEFAULT << std::endl;
+    if (this->_grade == Bureaucrat::MINGRADE)
+        throw GradeTooLowException();
+    this->_grade++;
+}
+
 std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i ) {
-    o << "The value of _foo is : " << i.getFoo();
+    o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
+    return o;
+}
+
+std::ostream &	operator<<( std::ostream & o, Bureaucrat const * i ) {
+    o << i->getName() << ", bureaucrat grade " << i->getGrade() << ".";
     return o;
 }
