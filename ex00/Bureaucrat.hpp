@@ -54,7 +54,6 @@ private:
 };
 
 std::ostream &		operator<<(std::ostream & o, Bureaucrat const & i);
-std::ostream &		operator<<(std::ostream & o, Bureaucrat const * i);
 
 // Set VERBOSE to one to get more verbose Con and Destructor calls
 # ifndef VERBOSE
