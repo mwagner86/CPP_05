@@ -13,7 +13,12 @@
 #include "Form.hpp"
 
 Form::Form(std::string const & name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec) {
-
+    if (VERBOSE) {
+        std::cout << COLOR_GREEN << "[Form] " << COLOR_DEFAULT
+                  << "Default Constructor called " << COLOR_YELLOW << name << COLOR_DEFAULT
+                  << " " << COLOR_CYAN << gradeToSign << COLOR_DEFAULT
+                  << " " << COLOR_ORANGE << gradeToExec << COLOR_DEFAULT <<std::endl;
+    }
     if (gradeToSign > MINGRADE || gradeToExec > MINGRADE) {
         throw GradeTooLowException();
     }
@@ -24,17 +29,33 @@ Form::Form(std::string const & name, int gradeToSign, int gradeToExec) : _name(n
 }
 
 Form::Form(Form const & src) : _name(src._name + "_copy"), _gradeToSign(src._gradeToSign), _gradeToExec(src._gradeToExec) {
-
+    if (VERBOSE) {
+        std::cout << COLOR_GREEN << "[Form] " << COLOR_DEFAULT
+                  << "Copy Constructor called " << COLOR_YELLOW << src.getName() << COLOR_DEFAULT
+                  << " " << COLOR_CYAN << src.getGradeToSign() << COLOR_DEFAULT
+                  << " " << COLOR_ORANGE << src.getGradeToExec() << COLOR_DEFAULT << std::endl;
+    }
     *this = src;
 }
 
 Form & Form::operator=(const Form & rhs) {
+    if (VERBOSE) {
+        std::cout << COLOR_GREEN << "[Form] " << COLOR_DEFAULT
+                  << "Copy Constructor called " << COLOR_YELLOW << rhs.getName() << COLOR_DEFAULT
+                  << " " << COLOR_CYAN << rhs.getGradeToSign() << COLOR_DEFAULT
+                  << " " << COLOR_ORANGE << rhs.getGradeToExec() << COLOR_DEFAULT << std::endl;
+    }
     if (this != &rhs)
         this->_isSigned = rhs._isSigned;
     return *this;
 }
 
 Form::~Form(void) {
+    if (VERBOSE) {
+        std::cout << COLOR_GREEN << "[Form] " << COLOR_DEFAULT
+                  << "Destructor called " << COLOR_YELLOW << this->getName() << COLOR_DEFAULT
+                  << std::endl;
+    }
 }
 
 std::string const &	Form::getName(void) const {
