@@ -42,7 +42,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) {
                   << "Assignment Constructor called " << COLOR_YELLOW << rhs.getName() << COLOR_DEFAULT
                   << " " << COLOR_CYAN << rhs.getGrade() << COLOR_DEFAULT << std::endl;
     }
-    if ( this != &rhs )
+    if (this != &rhs)
         this->_grade = rhs.getGrade();
     return *this;
 }
@@ -87,12 +87,17 @@ void	Bureaucrat::decrementGrade(void) {
     this->_grade++;
 }
 
-std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i ) {
-    o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
-    return o;
+void	Bureaucrat::signForm(Form & form) const {
+    try {
+        form.beSigned(*this);
+        std::cout << COLOR_GREEN << this->_name << " signed " << form.getName() << COLOR_DEFAULT << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << COLOR_RED << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << COLOR_DEFAULT << std::endl;
+    }
 }
 
-std::ostream &	operator<<( std::ostream & o, Bureaucrat const * i ) {
-    o << i->getName() << ", bureaucrat grade " << i->getGrade() << ".";
+std::ostream &	operator<<(std::ostream & o, Bureaucrat const & i) {
+    o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
     return o;
 }

@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include "colors.hpp"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -29,6 +32,8 @@ public:
     std::string	const & getName(void) const;
     void                incrementGrade(void);
     void	            decrementGrade(void);
+
+    void				signForm(Form & form) const;
 
     class GradeTooHighException : public std::exception {
     public:
@@ -53,8 +58,7 @@ private:
 
 };
 
-std::ostream &		operator<<( std::ostream & o, Bureaucrat const & i );
-std::ostream &		operator<<( std::ostream & o, Bureaucrat const * i );
+std::ostream &		operator<<(std::ostream & o, Bureaucrat const & i);
 
 // Set VERBOSE to one to get more verbose Con and Destructor calls
 # ifndef VERBOSE
