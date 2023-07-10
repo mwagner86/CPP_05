@@ -19,7 +19,7 @@ int main() {
     std::cout << "\n**************************************\n"
               << "VALID INTERACTION\n"
               << "**************************************\n";
-    Form publicHealth("Example Form", 80, 90);
+    Form publicHealth("Public Health Form", 80, 90);
     // Using the operator<< overload with Form object reference
     std::cout << publicHealth << std::endl;
 
@@ -30,7 +30,7 @@ int main() {
     std::cout << "\n**************************************\n"
               << "INVALID INTERACTION\n"
               << "**************************************\n";
-    Form wallApproval("Example Form", 50, 100);
+    Form wallApproval("Wall Approval Form", 50, 100);
     // Using the operator<< overload with Form object reference
     std::cout << wallApproval << std::endl;
 
