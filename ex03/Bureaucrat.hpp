@@ -6,7 +6,7 @@
 /*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 17:27:40 by mwagner           #+#    #+#             */
-/*   Updated: 2023/07/11 17:33:50 by mwagner          ###   ########.fr       */
+/*   Updated: 2023/07/12 00:30:39 by mwagner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ std::ostream &		operator<<(std::ostream & o, Bureaucrat const & i);
 #  define VERBOSE 0
 # endif
 #endif //EX03_BUREAUCRAT_HPP
+
