@@ -11,17 +11,21 @@
 # **************************************************************************** #
 
 VAL 		:= valgrind -s --leak-check=full --show-leak-kinds=all
-RUN 		:= ./main
+RUN 		:= ./form28B
 
 GREEN 		:= \033[0;32m
 RED 		:= \033[0;31m
 RESET_COL 	:= \033[0m
 
-NAME 		:= main
+NAME 		:= form28B
 CC 			:= c++
 CFLAGS 		:= -Wall -Werror -Wextra -std=c++98
 SRC 		:=	main.cpp \
-				TemplateClass.cpp
+				Bureaucrat.cpp \
+				AForm.cpp \
+				ShrubberyCreationForm.cpp \
+				PresidentialPardonForm.cpp \
+				RobotomyRequestForm.cpp
 
 all: $(NAME)
 
