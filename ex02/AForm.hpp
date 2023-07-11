@@ -82,4 +82,3 @@ private:
 std::ostream & operator<<(std::ostream & o, AForm const & i);
 
 #endif //EX02_AAForm_HPP
-

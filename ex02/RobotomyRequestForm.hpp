@@ -1,12 +1,20 @@
-//
-// Created by max on 7/10/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/11 17:34:44 by mwagner           #+#    #+#             */
+/*   Updated: 2023/07/11 17:54:40 by mwagner          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef EX02_ROBOTOMYREQUESTFORM_HPP
 #define EX02_ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib> // For rand and srand
 #include "AForm.hpp"
 #include "colors.hpp"
 

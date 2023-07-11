@@ -1,6 +1,14 @@
-//
-// Created by max on 7/10/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/11 17:34:39 by mwagner           #+#    #+#             */
+/*   Updated: 2023/07/11 17:54:17 by mwagner          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
@@ -52,8 +60,9 @@ std::string const & RobotomyRequestForm::getFormType(void) const {
 }
 
 void	RobotomyRequestForm::validExecution(Bureaucrat const & executor) const {
+	int randomNumber = std::rand() % 2;
 	std::cout << "...VVVrrrVVVrrr... *robotic drilling noise* ...VVrrrVvvrr..." << std::endl;
-	if((rand() % 2) == 0)
+	if (randomNumber == 0)
 		std::cout << COLOR_GREEN << this->getName() << " was robotomized successfully" << COLOR_DEFAULT << std::endl;
 	else
 		std::cout << COLOR_RED << "The robotomizer failed to robotomize " << this->getName() << COLOR_DEFAULT << std::endl;

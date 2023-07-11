@@ -1,6 +1,14 @@
-//
-// Created by max on 7/10/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/11 17:35:17 by mwagner           #+#    #+#             */
+/*   Updated: 2023/07/11 17:35:19 by mwagner          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef EX02_SHRUBBERYCREATIONFORM_HPP
 #define EX02_SHRUBBERYCREATIONFORM_HPP
