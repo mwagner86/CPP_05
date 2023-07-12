@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX02_COLORS_H
-# define EX02_COLORS_H
+#ifndef EX03_COLORS_H
+# define EX03_COLORS_H
 
 #define COLOR_DEFAULT "\033[0m"
 #define COLOR_RED "\033[31m"
