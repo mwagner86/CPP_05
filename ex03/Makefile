@@ -39,6 +39,7 @@ clean:
 	rm -f $(NAME)
 
 fclean: clean
+		rm -fr *_shrubbery
 
 re: fclean all
 
