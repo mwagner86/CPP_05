@@ -1,6 +1,8 @@
 # CPP_05
 ### Repetition and Exceptions
 
+## This module is designed to help you understand Try/Catch and Exceptions in CPP.
+
 ## Exercise 00:
 ### Mommy, when I grow up, I want to be a bureaucrat!
 Let’s design an artificial nightmare of offices, corridors, forms, and waiting queues.
